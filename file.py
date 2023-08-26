@@ -50,6 +50,12 @@ class LinkedList:
             currentNode = currentNode.next
             currentPosition +=1 
             
+    def deleteEnd(self):
+        lastNode = self.head
+        while lastNode.next is not None:
+            previousNode = lastNode
+            lastNode = lastNode.next
+        previousNode.next = None
                    
     def insert(self,newNode):
         if self.head is None:
@@ -83,6 +89,7 @@ linkedList.insert(secondNode)
 linkedList.insert(thirdNode)  
 linkedList.insertHead(fourthNode)
 linkedList.insertAt(fifthNode,1)
+linkedList.deleteEnd()
 
-linkedList.printList()  
+linkedList.printList()
  
